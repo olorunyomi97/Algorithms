@@ -1,23 +1,14 @@
-<?php
-
-class Solution {
-
-    /**
-     * @param Integer[] $nums
-     * @param Integer $target
-     * @return Integer[]
-     */
-    function twoSum($nums, $target) {
-         // Brute Force Method
-        $new_nums = $nums;
-        
-        for ($i = 0; $i < count($nums); $i++) {
-            $biggie = $target - $nums[$i];
-            unset($new_nums[$i]);
-            
-            if($key = array_search($biggie, $new_nums)) {
-                return [$i, $key];
-            }
-        }   
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+ const twoSum = (nums, target) => {
+    for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
     }
-}
+  }
+};
