@@ -19,7 +19,7 @@ var romanToInt = function (string) {
             // Remove the current letter's numeric value from the total
             total -= numerals[string[i]];
         } else {
-            // Add the current letter's numeric value to the total
+            // Add the current letter's numeric value to the total number
             total += numerals[string[i]];
         }
     }
