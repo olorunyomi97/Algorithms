@@ -1,5 +1,5 @@
 /**
- * @param {string} s
+ * @param {string}
  * @return {string}
  */
  const longestPalindrome = (s) => {
