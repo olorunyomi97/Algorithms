@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Plan 365 - Unified Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">📅</div>
+                    <h1>Care Plan 365</h1>
+                </div>
+                <nav class="nav-tabs">
+                    <a href="#" class="nav-tab">👥 Patients</a>
+                    <a href="#" class="nav-tab">📄 Billing</a>
+                    <a href="#" class="nav-tab">👨‍⚕️ Providers</a>
+                    <a href="#" class="nav-tab active">📅 Appointments</a>
+                </nav>
+                <div class="user-info">
+                    <span class="user-avatar">AF</span>
+                    <div class="user-details">
+                        <span class="clinic-name">Aoa Clinic Practice</span>
+                        <span class="user-name">Abel Boykin</span>
+                        <span class="clinic-code">AOA CLINIC</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="unified-booking-container">
+                <!-- Left Panel - Provider Selection & Session Details -->
+                <div class="left-panel">
+                    <div class="panel-section">
+                        <h2>🔍 Filter Providers</h2>
+                        <div class="filter-controls">
+                            <div class="form-group">
+                                <label>Specialty</label>
+                                <select class="form-select">
+                                    <option>Psychiatrist</option>
+                                    <option>Cardiology</option>
+                                    <option>Neurology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Search Provider</label>
+                                <input type="text" class="form-input" placeholder="Search by provider name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>Available Providers</h3>
+                        <div class="providers-list">
+                            <div class="provider-card active" data-provider="jaydon">
+                                <div class="provider-avatar">JW</div>
+                                <div class="provider-info">
+                                    <h4>Jaydon Workman</h4>
+                                    <span class="provider-specialty">Psychiatrist</span>
+                                    <span class="provider-email">jayson.workman@gmail.com</span>
+                                    <span class="time-slot">● 8am-10am</span>
+                                </div>
+                            </div>
+                            <div class="provider-card" data-provider="zaire">
+                                <div class="provider-avatar">ZK</div>
+                                <div class="provider-info">
+                                    <h4>Zaire Korsgaard</h4>
+                                    <span class="provider-specialty">Psychiatrist</span>
+                                    <span class="provider-email">jayson.workman@gmail.com</span>
+                                    <span class="time-slot">● 8am-10am</span>
+                                </div>
+                            </div>
+                            <div class="provider-card" data-provider="cooper">
+                                <div class="provider-avatar">CR</div>
+                                <div class="provider-info">
+                                    <h4>Cooper Rosser</h4>
+                                    <span class="provider-specialty">Psychiatrist</span>
+                                    <span class="provider-email">jayson.workman@gmail.com</span>
+                                    <span class="time-slot">● 8am-10am</span>
+                                </div>
+                            </div>
+                            <div class="provider-card" data-provider="corey">
+                                <div class="provider-avatar">CT</div>
+                                <div class="provider-info">
+                                    <h4>Corey Torff</h4>
+                                    <span class="provider-specialty">Psychiatrist</span>
+                                    <span class="provider-email">jayson.workman@gmail.com</span>
+                                    <span class="time-slot">● 8am-10am</span>
+                                </div>
+                            </div>
+                            <div class="provider-card" data-provider="rayna">
+                                <div class="provider-avatar">RA</div>
+                                <div class="provider-info">
+                                    <h4>Rayna Passaquindici Arcand</h4>
+                                    <span class="provider-specialty">Psychiatrist</span>
+                                    <span class="provider-email">jayson.workman@gmail.com</span>
+                                    <span class="time-slot">● 8am-10am</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>📋 Session Details</h3>
+                        <div class="session-controls">
+                            <div class="form-group">
+                                <label>Select Patient</label>
+                                <select class="form-select">
+                                    <option>Select patient</option>
+                                    <option>Andrew Scone</option>
+                                    <option>Sarah Johnson</option>
+                                    <option>Michael Brown</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Session Duration</label>
+                                <select class="form-select">
+                                    <option>Select duration</option>
+                                    <option>30 minutes</option>
+                                    <option>45 minutes</option>
+                                    <option>60 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Calendar & Booking Summary -->
+                <div class="right-panel">
+                    <div class="panel-section">
+                        <h2>📅 Select Date & Time</h2>
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button class="calendar-nav" id="prevMonth">‹</button>
+                                <div class="calendar-title">
+                                    <select class="month-select">
+                                        <option>July</option>
+                                        <option>August</option>
+                                        <option>September</option>
+                                    </select>
+                                    <select class="year-select">
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                    </select>
+                                </div>
+                                <button class="calendar-nav" id="nextMonth">›</button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="day-header">MO</div>
+                                <div class="day-header">TU</div>
+                                <div class="day-header">WE</div>
+                                <div class="day-header">TH</div>
+                                <div class="day-header">FR</div>
+                                <div class="day-header">SA</div>
+                                <div class="day-header">SU</div>
+                                
+                                <div class="day-cell inactive">30</div>
+                                <div class="day-cell available" data-date="1">1</div>
+                                <div class="day-cell available" data-date="2">2</div>
+                                <div class="day-cell available" data-date="3">3</div>
+                                <div class="day-cell available" data-date="4">4</div>
+                                <div class="day-cell available" data-date="5">5</div>
+                                <div class="day-cell available" data-date="6">6</div>
+                                
+                                <div class="day-cell available" data-date="7">7</div>
+                                <div class="day-cell available" data-date="8">8</div>
+                                <div class="day-cell available" data-date="9">9</div>
+                                <div class="day-cell available" data-date="10">10</div>
+                                <div class="day-cell available" data-date="11">11</div>
+                                <div class="day-cell available" data-date="12">12</div>
+                                <div class="day-cell available" data-date="13">13</div>
+                                
+                                <div class="day-cell available" data-date="14">14</div>
+                                <div class="day-cell available" data-date="15">15</div>
+                                <div class="day-cell available" data-date="16">16</div>
+                                <div class="day-cell available" data-date="17">17</div>
+                                <div class="day-cell available" data-date="18">18</div>
+                                <div class="day-cell available" data-date="19">19</div>
+                                <div class="day-cell available" data-date="20">20</div>
+                                
+                                <div class="day-cell available" data-date="21">21</div>
+                                <div class="day-cell available" data-date="22">22</div>
+                                <div class="day-cell available" data-date="23">23</div>
+                                <div class="day-cell available" data-date="24">24</div>
+                                <div class="day-cell available" data-date="25">25</div>
+                                <div class="day-cell available" data-date="26">26</div>
+                                <div class="day-cell available selected" data-date="27">27</div>
+                                
+                                <div class="day-cell available" data-date="28">28</div>
+                                <div class="day-cell available" data-date="29">29</div>
+                                <div class="day-cell available" data-date="30">30</div>
+                                <div class="day-cell available" data-date="31">31</div>
+                                <div class="day-cell inactive">1</div>
+                                <div class="day-cell inactive">2</div>
+                                <div class="day-cell inactive">3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="time-slots">
+                            <h4>Available Times</h4>
+                            <div class="time-slot-grid">
+                                <button class="time-slot">8:00 AM</button>
+                                <button class="time-slot">8:30 AM</button>
+                                <button class="time-slot active">9:00 AM</button>
+                                <button class="time-slot">9:30 AM</button>
+                                <button class="time-slot">10:00 AM</button>
+                                <button class="time-slot">10:30 AM</button>
+                                <button class="time-slot">11:00 AM</button>
+                                <button class="time-slot">11:30 AM</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>📋 Booking Summary</h3>
+                        <div class="booking-summary">
+                            <div class="summary-card">
+                                <div class="summary-section">
+                                    <h4>👤 Patient</h4>
+                                    <p>Andrew Scone</p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>👨‍⚕️ Provider</h4>
+                                    <p>Dr Ethel Boykin</p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>📅 Date</h4>
+                                    <p>Mon, 27th April, 2025</p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>⏰ Time</h4>
+                                    <p>9:00am - 10:00am</p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>🏥 Practice Location</h4>
+                                    <p>AOA Clinic</p>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary">📝 Save Draft</button>
+                                <button class="btn btn-primary">📅 Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
